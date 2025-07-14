@@ -1,6 +1,6 @@
 {
   "name": "astarion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ELF format reader and writer",
   "author": "Stephen Belanger <admin@stephenbelanger.com> (http://stephenbelanger.com/)",
   "license": "MIT",
