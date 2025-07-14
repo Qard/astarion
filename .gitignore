@@ -1,0 +1,16 @@
+# Ignore common dot-files
+.DS_Store
+.vscode
+.claude
+
+# Ignore dependencies and lock files
+node_modules
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignore build files
+dist
+
+# Ignore test fixtures
+fixtures

@@ -1,0 +1,37 @@
+name: release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      pull-requests: write
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - name: initialize git user
+        run: |
+          git config --global user.name "Stephen Belanger"
+          git config --global user.email "admin@stephenbelanger.com"
+      - name: install
+        run: npm install
+      - name: release
+        run: npm run release  -- --ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,47 @@
+{
+  "name": "astarion",
+  "version": "1.0.0",
+  "description": "ELF format reader and writer",
+  "author": "Stephen Belanger <admin@stephenbelanger.com> (http://stephenbelanger.com/)",
+  "license": "MIT",
+  "homepage": "https://github.com/qard/astarion#readme",
+  "bugs": {
+    "url": "https://github.com/qard/astarion/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qard/astarion.git"
+  },
+  "keywords": [
+    "elf",
+    "linux",
+    "parser",
+    "serializer",
+    "reader",
+    "writer"
+  ],
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs",
+    "default": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "lint": "oxlint",
+    "prepare": "npm run build",
+    "pretest": "npm run build",
+    "test": "node --test dist/*.test.js",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^10.0.1",
+    "@types/node": "^24.0.13",
+    "oxlint": "^1.6.0",
+    "release-it": "^19.0.3",
+    "typescript": "^5.7.2"
+  }
+}

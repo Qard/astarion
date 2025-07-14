@@ -1,0 +1,30 @@
+# Source files
+src/
+
+# Test files
+*.test.ts
+*.test.js
+
+# Test fixtures
+fixtures/
+
+# Config files
+.gitignore
+.npmignore
+.github/
+.release-it.json
+tsconfig.json
+
+# IDE files
+.claude
+.vscode/
+.idea/
+.DS_Store
+
+# Lock files (only package-lock.json should be published)
+pnpm-lock.yaml
+yarn.lock
+
+# Temporary files
+*.tmp
+*.log
